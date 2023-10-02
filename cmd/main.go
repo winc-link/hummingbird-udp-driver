@@ -28,7 +28,7 @@ import (
 
 func main() {
 	ctx, cancel := context.WithCancel(context.Background())
-	driverService := service.NewDriverService("hummingbird-tcp-driver", commons.HummingbirdIot)
+	driverService := service.NewDriverService("hummingbird-udp-driver", commons.HummingbirdIot)
 	config.InitConfig(driverService)
 	tcpDriver := driver.NewUdpProtocolDriver(ctx, driverService)
 	go func() {
